@@ -28,6 +28,44 @@
   color: #61dafb;
 }
 
+.app {
+  padding-top: 124px;
+}
+
+section[id] {
+  scroll-margin-top: 140px;
+}
+
+@media (max-width: 1200px) {
+  .app {
+    padding-top: 112px;
+  }
+
+  section[id] {
+    scroll-margin-top: 126px;
+  }
+}
+
+@media (max-width: 900px) {
+  .app {
+    padding-top: 82px;
+  }
+
+  section[id] {
+    scroll-margin-top: 96px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding-top: 72px;
+  }
+
+  section[id] {
+    scroll-margin-top: 84px;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

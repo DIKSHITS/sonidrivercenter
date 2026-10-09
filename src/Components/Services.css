@@ -1,0 +1,707 @@
+
+/* =========================================
+   SERVICES SECTION
+========================================= */
+
+.services-section {
+  width: 100%;
+  background: #ffffff;
+  padding: clamp(24px, 3vw, 30px) 0 clamp(36px, 4vw, 50px);
+.services-section,
+.services-section * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.section-small-title {
+  margin: 0 0 8px;
+
+  color: #4d7fae;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #001b35;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(30px, 4.5vw, 42px);
+  font-weight: 800;
+
+  line-height: 1.15;
+}
+
+.heading-line {
+  width: 65px;
+  height: 4px;
+
+  margin: 12px auto 14px;
+
+  background: #f5cf00;
+
+  border-radius: 4px;
+}
+
+.section-description {
+  margin: 0;
+
+  color: #4f5964;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(14px, 1.6vw, 17px);
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   SERVICES CARDS CONTAINER
+========================================= */
+
+.services-container {
+  width: min(1340px, calc(100% - 110px));
+  max-width: 1340px;
+
+  margin: 28px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =========================================
+   SERVICE CARD
+========================================= */
+
+.service-card {
+  background: #ffffff;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  border: 1px solid #e8edf2;
+
+  box-shadow:
+    0 5px 22px rgba(0, 35, 65, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 35, 65, 0.13);
+}
+
+
+/* =========================================
+   SERVICE IMAGE
+========================================= */
+
+.service-image-wrapper {
+  width: 100%;
+  height: 205px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   SERVICE ICON
+========================================= */
+
+.service-icon {
+  position: absolute;
+
+  left: 35px;
+  bottom: -27px;
+
+  width: 75px;
+  height: 75px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #0758ad;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.08);
+
+  z-index: 3;
+}
+
+.service-icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+
+/* =========================================
+   SERVICE CONTENT
+========================================= */
+
+.service-content {
+  padding: clamp(28px, 3vw, 35px) clamp(22px, 3vw, 42px) clamp(20px, 2.4vw, 25px);
+}
+
+
+/* =========================================
+   SERVICE TITLE
+========================================= */
+
+.service-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+}
+
+.service-title-row h3 {
+  margin: 0;
+
+  color: #001b35;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 800;
+}
+
+.service-arrow {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #00223a;
+
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 400;
+}
+
+
+/* =========================================
+   SERVICE LIST
+========================================= */
+
+.service-list {
+  list-style: none;
+
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.service-list li {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 8px;
+
+  color: #4e5660;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(14px, 1.6vw, 17px);
+
+  line-height: 1.35;
+}
+
+.service-list li span {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #075db5;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   WHATSAPP BUTTON
+========================================= */
+
+.service-whatsapp-btn {
+  width: min(340px, 100%);
+  max-width: 100%;
+
+  height: 57px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #00233b;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.service-whatsapp-btn:hover {
+  background: #003a5d;
+
+  transform: translateY(-2px);
+}
+
+.service-whatsapp-icon {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-whatsapp-icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.service-btn-arrow {
+  margin-left: 5px;
+
+  font-size: 25px;
+}
+
+
+/* =========================================
+   VEHICLES SECTION
+========================================= */
+
+.vehicles-section {
+  margin-top: 28px;
+
+  padding:
+    30px
+    0
+    50px;
+
+  background: #f3f7fb;
+}
+
+.vehicle-heading {
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   VEHICLE CONTAINER
+========================================= */
+
+.vehicles-container {
+  width: min(1340px, calc(100% - 80px));
+  max-width: 1340px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+
+/* =========================================
+   VEHICLE CARD
+========================================= */
+
+.vehicle-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  border: 1px solid #dfe7ef;
+
+  box-shadow:
+    0 4px 15px rgba(0, 35, 65, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 35, 65, 0.12);
+}
+
+
+/* =========================================
+   VEHICLE IMAGE
+========================================= */
+
+.vehicle-image-wrapper {
+  width: 100%;
+  height: clamp(145px, 18vw, 175px);
+
+  overflow: hidden;
+}
+
+.vehicle-image-wrapper img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.vehicle-card:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================
+   VEHICLE TITLE
+========================================= */
+
+.vehicle-card h3 {
+  margin: 0;
+
+  padding: clamp(12px, 1.5vw, 16px) clamp(14px, 1.8vw, 20px) clamp(13px, 1.8vw, 18px);
+
+  color: #071d32;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 800;
+}
+
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .services-container {
+    width: calc(100% - 40px);
+  }
+
+  .vehicles-container {
+    width: calc(100% - 40px);
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 18px;
+  }
+
+  .service-content {
+    padding: 32px 28px 24px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .services-section {
+    padding-top: 50px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(28px, 5vw, 35px);
+  }
+
+  .section-description {
+    font-size: 15px;
+  }
+
+  .services-container {
+    width: calc(100% - 24px);
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .service-image-wrapper {
+    height: clamp(210px, 34vw, 230px);
+  }
+
+  .vehicles-container {
+    width: calc(100% - 24px);
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+  .services-section {
+    padding-top: 45px;
+  }
+
+  .section-small-title {
+    font-size: 13px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .section-description {
+    font-size: 14px;
+  }
+
+  .services-container {
+    width: calc(100% - 18px);
+
+    margin-top: 25px;
+  }
+
+  .service-image-wrapper {
+    height: 185px;
+  }
+
+  .service-icon {
+    width: 62px;
+    height: 62px;
+
+    left: 20px;
+    bottom: -22px;
+  }
+
+  .service-icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .service-content {
+    padding: 30px 18px 20px;
+  }
+
+  .service-title-row h3 {
+    font-size: 22px;
+  }
+
+  .service-arrow {
+    width: 36px;
+    height: 36px;
+
+    font-size: 20px;
+  }
+
+  .service-list li {
+    font-size: 13px;
+
+    gap: 8px;
+  }
+
+  .service-list li span {
+    width: 18px;
+    height: 18px;
+
+    font-size: 11px;
+  }
+
+  .service-whatsapp-btn {
+    width: 100%;
+
+    height: 52px;
+
+    font-size: 14px;
+  }
+
+  .vehicles-section {
+    margin-top: 20px;
+
+    padding: 32px 0 36px;
+  }
+
+  .vehicle-heading {
+    margin-bottom: 22px;
+  }
+
+  .vehicles-container {
+    width: calc(100% - 16px);
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+  }
+
+  .vehicle-image-wrapper {
+    height: 115px;
+  }
+
+  .vehicle-card h3 {
+    padding: 10px 10px 12px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .vehicles-container {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-image-wrapper {
+    height: 160px;
+  }
+
+  .vehicle-card h3 {
+    font-size: 15px;
+  }
+
+}
+
+  .service-image-wrapper {
+    height: 170px;
+  }
+
+  .service-title-row h3 {
+    font-size: 21px;
+  }
+
+  .service-whatsapp-btn {
+    font-size: 13px;
+    height: 50px;
+  }
+
+}
+
+
+@media (max-width: 420px) {
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .section-description {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .services-container,
+  .vehicles-container {
+    width: calc(100% - 14px);
+  }
+
+  .service-content {
+    padding: 28px 16px 18px;
+  }
+
+  .service-list li {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .vehicle-card h3 {
+    font-size: 14px;
+  }
+}
