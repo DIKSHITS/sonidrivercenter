@@ -1,545 +1,595 @@
 
 /* =========================================
-   WHY CHOOSE US SECTION
+   SONI DRIVER CENTER
+   WHY CHOOSE US + CUSTOMER REVIEWS
+   Responsive: Mobile, Tablet & Desktop
 ========================================= */
 
 .why-section {
+  --why-navy: #101d2b;
+  --why-navy-light: #1c3045;
+  --why-gold: #f5b82e;
+  --why-text: #263548;
+  --why-muted: #6b7787;
+  --why-bg: #f6f8fb;
+  --why-border: #e8edf3;
+
   width: 100%;
+  padding: 90px 24px;
+  overflow: clip;
   background: #ffffff;
-  padding: 48px 0 55px;
-  overflow-x: hidden;
+  color: var(--why-text);
+  font-family: inherit;
 }
 
-.why-section,
-.why-section * {
+.why-section *,
+.why-section *::before,
+.why-section *::after {
   box-sizing: border-box;
 }
 
+.why-section h2,
+.why-section h3,
+.why-section h4,
+.why-section p {
+  overflow-wrap: anywhere;
+}
+
+.why-section svg {
+  display: block;
+}
 
 /* =========================================
-   MAIN HEADING
+   SECTION HEADINGS
 ========================================= */
 
-.why-heading {
+.why-heading,
+.reviews-heading {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 48px;
   text-align: center;
-  padding: 0 20px;
 }
 
-.why-small-title {
-  margin: 0 0 8px;
-
-  color: #4b78a5;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(13px, 1.4vw, 16px);
-  font-weight: 700;
-
-  letter-spacing: 1px;
-}
-
-.why-heading h2 {
-  margin: 0;
-
-  color: #071b32;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(30px, 4.5vw, 42px);
+.why-small-title,
+.reviews-small-title {
+  margin: 0 0 14px;
+  color: #b78312;
+  font-size: 12px;
   font-weight: 800;
-
-  line-height: 1.15;
+  letter-spacing: 2.5px;
+  line-height: 1.7;
 }
 
-.why-yellow-line {
-  width: 66px;
-  height: 5px;
-
-  margin: 13px auto 25px;
-
-  background: #f6ce00;
-
-  border-radius: 5px;
+.why-heading h2,
+.reviews-heading h2 {
+  margin: 0;
+  color: var(--why-navy);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  text-wrap: balance;
 }
 
+.why-yellow-line,
+.reviews-yellow-line {
+  width: 58px;
+  height: 4px;
+  margin: 22px auto 0;
+  border-radius: 10px;
+  background: var(--why-gold);
+}
 
 /* =========================================
-   WHY CARDS
+   WHY CHOOSE US CARDS
 ========================================= */
 
 .why-cards {
-  width: min(1340px, calc(100% - 130px));
-  max-width: 1340px;
-
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-
   display: grid;
-
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  gap: 28px;
+  gap: 22px;
 }
 
-
 .why-card {
-  min-height: clamp(205px, 22vw, 230px);
-
-  background: #ffffff;
-
-  border: 1px solid #e6ebf0;
-
-  border-radius: 13px;
-
+  position: relative;
+  min-width: 0;
+  min-height: 250px;
+  padding: 32px 22px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-
-  padding: 20px 15px 25px;
-
-  box-shadow:
-    0 4px 16px rgba(0, 30, 60, 0.07);
-
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1px solid var(--why-border);
+  border-radius: 13px;
+  box-shadow: 0 5px 22px rgba(16, 29, 43, 0.035);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.why-card::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 0;
+  left: 18px;
+  height: 3px;
+  background: var(--why-gold);
+  border-radius: 4px 4px 0 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s ease;
 }
 
 .why-card:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 10px 25px rgba(0, 30, 60, 0.12);
+  transform: translateY(-6px);
+  border-color: rgba(245, 184, 46, 0.65);
+  box-shadow: 0 18px 38px rgba(16, 29, 43, 0.09);
 }
 
+.why-card:hover::after {
+  transform: scaleX(1);
+}
 
-/* =========================================
-   WHY ICON
-========================================= */
+/* Feature icons */
 
 .why-icon {
-  width: clamp(56px, 5vw, 64px);
-  height: clamp(56px, 5vw, 64px);
-
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: #0758aa;
-
-  margin-bottom: 8px;
+  color: #b78312;
+  background: #fff5d9;
+  border: 1px solid #ffebae;
+  border-radius: 13px;
+  transition:
+    color 0.28s ease,
+    background 0.28s ease,
+    transform 0.28s ease;
 }
 
 .why-icon svg {
-  width: clamp(54px, 4.8vw, 62px);
-  height: clamp(54px, 4.8vw, 62px);
+  width: 34px;
+  height: 34px;
 }
 
+.why-card:hover .why-icon {
+  color: var(--why-navy);
+  background: var(--why-gold);
+  transform: scale(1.04);
+}
+
+/* White checkmark inside shield remains white */
+.why-icon.shield-icon svg path:last-child {
+  stroke: #ffffff;
+}
 
 .why-card h3 {
-  margin: 5px 0 10px;
-
-  color: #071b32;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(18px, 2vw, 22px);
+  margin: 0 0 12px;
+  color: var(--why-navy);
+  font-size: 18px;
   font-weight: 800;
-}
-
-.why-card p {
-  margin: 0;
-
-  color: #66707b;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(14px, 1.6vw, 17px);
-
   line-height: 1.45;
 }
 
+.why-card > p {
+  margin: 0;
+  color: var(--why-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
 
 /* =========================================
-   REVIEWS SECTION
+   CUSTOMER REVIEWS SECTION
 ========================================= */
 
 .reviews-section {
-  width: min(1340px, calc(100% - 130px));
-  max-width: 1340px;
-
-  margin: 48px auto 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto 0;
+  padding: 70px 0 0;
+  border-top: 1px solid var(--why-border);
 }
-
 
 .reviews-heading {
-  text-align: center;
-
-  margin-bottom: 25px;
+  margin-bottom: 45px;
 }
-
-
-.reviews-small-title {
-  margin: 0 0 8px;
-
-  color: #4b78a5;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(13px, 1.4vw, 16px);
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
-}
-
-
-.reviews-heading h2 {
-  margin: 0;
-
-  color: #071b32;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(30px, 4.5vw, 42px);
-
-  font-weight: 800;
-}
-
-
-.reviews-yellow-line {
-  width: 140px;
-  height: 5px;
-
-  margin: 13px auto 0;
-
-  background: #f6ce00;
-
-  border-radius: 5px;
-}
-
-
-/* =========================================
-   REVIEW CARDS
-========================================= */
 
 .reviews-container {
+  width: 100%;
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
 }
 
+/* Individual review */
 
 .review-card {
-  min-height: clamp(235px, 24vw, 265px);
-
-  padding: 23px 30px;
-
-  background: #ffffff;
-
-  border: 1px solid #e5eaf0;
-
+  min-width: 0;
+  padding: 30px 27px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--why-bg);
+  border: 1px solid var(--why-border);
   border-radius: 13px;
-
-  box-shadow:
-    0 4px 16px rgba(0, 30, 60, 0.07);
-
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
 }
 
 .review-card:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 10px 25px rgba(0, 30, 60, 0.11);
+  transform: translateY(-5px);
+  border-color: rgba(245, 184, 46, 0.6);
+  box-shadow: 0 15px 34px rgba(16, 29, 43, 0.075);
 }
 
-
-/* =========================================
-   STARS
-========================================= */
+/* Stars */
 
 .stars {
-  color: #f6bd00;
-
-  font-size: 24px;
-
-  letter-spacing: 3px;
-
+  margin-bottom: 19px;
+  color: #e8a914;
+  font-size: 19px;
   line-height: 1;
-
-  margin-bottom: 13px;
+  letter-spacing: 3px;
 }
 
-
-/* =========================================
-   REVIEW TEXT
-========================================= */
+/* Review quote */
 
 .review-text {
-  margin: 0;
-
-  color: #4c5661;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(14px, 1.6vw, 17px);
-
-  line-height: 1.5;
+  flex: 1;
+  margin: 0 0 26px;
+  color: #4e5b6c;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.9;
 }
 
-
-/* =========================================
-   REVIEW USER
-========================================= */
+/* Customer information */
 
 .review-user {
-  margin-top: 17px;
-
+  width: 100%;
+  margin-top: auto;
+  padding-top: 20px;
   display: flex;
   align-items: center;
-
   gap: 13px;
+  border-top: 1px solid #e1e7ee;
 }
 
-
-/* =========================================
-   NO PHOTO AVATAR
-========================================= */
-
 .review-avatar {
-  width: clamp(42px, 4vw, 48px);
-  height: clamp(42px, 4vw, 48px);
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-
-  background: #e7eff8;
-
-  color: #0758aa;
-
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(13px, 1.4vw, 15px);
-
-  font-weight: 800;
+  color: var(--why-navy);
+  background: #ffedbd;
+  border: 1px solid #f5d980;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.5px;
 }
 
-
-/* =========================================
-   NAME
-========================================= */
+.review-user > div:last-child {
+  min-width: 0;
+}
 
 .review-user h4 {
-  margin: 0 0 4px;
-
-  color: #142235;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(15px, 1.6vw, 18px);
-
+  margin: 0 0 5px;
+  color: var(--why-navy);
+  font-size: 14px;
   font-weight: 800;
+  line-height: 1.4;
 }
 
 .review-user span {
-  color: #87909a;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(13px, 1.4vw, 15px);
+  display: block;
+  color: var(--why-muted);
+  font-size: 12px;
+  line-height: 1.5;
 }
 
-
 /* =========================================
-   TABLET
+   LARGE LAPTOPS & SMALL DESKTOPS
 ========================================= */
 
 @media (max-width: 1100px) {
-
-  .why-cards {
-    width: calc(100% - 48px);
-
-    gap: 16px;
-  }
-
-  .why-card h3 {
-    font-size: 18px;
-  }
-
-  .why-card p {
-    font-size: 14px;
-  }
-
-  .reviews-section {
-    width: calc(100% - 48px);
-  }
-
-  .review-card {
-    padding: 20px 18px;
-  }
-
-  .review-text {
-    font-size: 15px;
-  }
-
-}
-
-
-/* =========================================
-   TABLET / SMALL LAPTOP
-========================================= */
-
-@media (max-width: 800px) {
-
   .why-section {
-    padding-top: 40px;
-  }
-
-  .why-heading h2,
-  .reviews-heading h2 {
-    font-size: clamp(28px, 4.5vw, 34px);
+    padding: 75px 24px;
   }
 
   .why-cards {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
 
-    width: calc(100% - 24px);
+  .why-card {
+    min-height: 225px;
+    padding: 27px;
   }
 
   .reviews-section {
-    width: calc(100% - 24px);
+    margin-top: 80px;
+    padding-top: 60px;
   }
 
   .reviews-container {
-    grid-template-columns: repeat(2, 1fr);
-
     gap: 18px;
   }
 
   .review-card {
-    min-height: auto;
+    padding: 25px 20px;
   }
-
 }
 
-
 /* =========================================
-   MOBILE
+   TABLETS
 ========================================= */
 
-@media (max-width: 550px) {
-
+@media (max-width: 768px) {
   .why-section {
-    padding: 40px 0 45px;
+    padding: 65px 22px;
+  }
+
+  .why-heading,
+  .reviews-heading {
+    margin-bottom: 36px;
+  }
+
+  .why-heading h2,
+  .reviews-heading h2 {
+    font-size: clamp(29px, 4.8vw, 36px);
   }
 
   .why-small-title,
   .reviews-small-title {
-    font-size: 13px;
-  }
-
-  .why-heading h2,
-  .reviews-heading h2 {
-    font-size: 28px;
-  }
-
-  .why-yellow-line {
-    margin-bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
   }
 
   .why-cards {
-    width: calc(100% - 16px);
-
-    grid-template-columns: 1fr;
-
-    gap: 15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 
   .why-card {
-    min-height: 196px;
+    min-height: 225px;
+    padding: 24px 20px;
+  }
+
+  .why-icon {
+    width: 54px;
+    height: 54px;
+    flex-basis: 54px;
+    margin-bottom: 19px;
+  }
+
+  .why-icon svg {
+    width: 30px;
+    height: 30px;
   }
 
   .why-card h3 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
-  .why-card p {
-    font-size: 14px;
+  .why-card > p {
+    font-size: 13px;
   }
 
   .reviews-section {
-    width: calc(100% - 16px);
-
-    margin-top: 42px;
+    margin-top: 65px;
+    padding-top: 50px;
   }
 
   .reviews-container {
-    grid-template-columns: 1fr;
-
-    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 
   .review-card {
-    padding: 18px 16px;
-
-    min-height: 220px;
+    padding: 23px 20px;
   }
 
-  .stars {
-    font-size: 20px;
+  /* Keep the third card centered in the last row */
+  .review-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 8px);
+    justify-self: center;
   }
-
-  .review-text {
-    font-size: 14px;
-  }
-
-  .review-avatar {
-    width: 40px;
-    height: 40px;
-  }
-
-  .review-user h4 {
-    font-size: 15px;
-  }
-
 }
 
-
 /* =========================================
-   VERY SMALL MOBILE
+   MOBILE PHONES
 ========================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
+  .why-section {
+    padding: 52px 17px;
+  }
+
+  .why-heading,
+  .reviews-heading {
+    margin-bottom: 30px;
+  }
+
+  .why-small-title,
+  .reviews-small-title {
+    margin-bottom: 11px;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
 
   .why-heading h2,
   .reviews-heading h2 {
-    font-size: 25px;
+    font-size: clamp(27px, 7.2vw, 32px);
+    line-height: 1.25;
+    letter-spacing: -0.6px;
+  }
+
+  .why-yellow-line,
+  .reviews-yellow-line {
+    width: 45px;
+    height: 3px;
+    margin-top: 17px;
+  }
+
+  .why-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .why-card {
+    min-height: auto;
+    padding: 23px 21px;
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
+    border-radius: 11px;
+  }
+
+  .why-icon {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin: 0;
+    border-radius: 11px;
+  }
+
+  .why-icon svg {
+    width: 28px;
+    height: 28px;
   }
 
   .why-card h3 {
+    grid-column: 2;
+    align-self: end;
+    margin: 0 0 5px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .why-card > p {
+    grid-column: 2;
+    align-self: start;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .reviews-section {
+    margin-top: 53px;
+    padding-top: 44px;
+  }
+
+  .reviews-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .review-card,
+  .review-card:last-child:nth-child(odd) {
+    width: 100%;
+    grid-column: auto;
+    padding: 23px 21px;
+    border-radius: 11px;
+  }
+
+  .stars {
+    margin-bottom: 15px;
     font-size: 18px;
   }
 
   .review-text {
+    margin-bottom: 21px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .review-user {
+    padding-top: 16px;
+    gap: 12px;
+  }
+
+  .review-avatar {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+}
+
+/* =========================================
+   EXTRA-SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 350px) {
+  .why-section {
+    padding-inline: 12px;
+  }
+
+  .why-heading h2,
+  .reviews-heading h2 {
+    font-size: 26px;
+  }
+
+  .why-card {
+    padding: 19px 15px;
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .why-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .why-card h3 {
+    font-size: 14px;
+  }
+
+  .why-card > p {
+    font-size: 12px;
+  }
+
+  .review-card,
+  .review-card:last-child:nth-child(odd) {
+    padding: 20px 16px;
+  }
+
+  .review-user h4 {
     font-size: 13px;
   }
+}
 
-  .why-cards,
-  .reviews-section {
-    width: calc(100% - 12px);
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .why-section *,
+  .why-section *::before,
+  .why-section *::after {
+    animation: none !important;
+    transition: none !important;
   }
-
 }

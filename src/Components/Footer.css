@@ -1,630 +1,594 @@
+
 /* =========================================
-   CTA BANNER
+   SONI DRIVER CENTER — FOOTER
+   Premium Navy + Gold
+   Desktop | Tablet | Mobile
+========================================= */
+
+.main-footer,
+.footer-cta {
+  --footer-navy: #101d2b;
+  --footer-navy-light: #192c40;
+  --footer-gold: #f5b82e;
+  --footer-muted: #b9c4d0;
+  --footer-border: rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.main-footer *,
+.main-footer *::before,
+.main-footer *::after,
+.footer-cta *,
+.footer-cta *::before,
+.footer-cta *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   1. BOOKING CTA
 ========================================= */
 
 .footer-cta {
-  width: 100%;
-  min-height: clamp(280px, 34vw, 310px);
-
   position: relative;
-
-  display: flex;
-  align-items: center;
-
-  background-image: url("./images/footer.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  isolation: isolate;
+  width: 100%;
+  padding: 58px 24px;
   overflow: hidden;
-}
-
-.footer-cta,
-.main-footer {
-  overflow-x: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      ellipse at 85% 20%,
+      rgba(245, 184, 46, 0.15),
+      transparent 40%
+    ),
+    linear-gradient(
+      115deg,
+      #101d2b 0%,
+      #1b3046 100%
+    );
 }
 
 .footer-cta-overlay {
   position: absolute;
   inset: 0;
-
+  z-index: -1;
   background:
     linear-gradient(
       90deg,
-      rgba(0, 24, 43, 0.88) 0%,
-      rgba(0, 25, 44, 0.65) 48%,
-      rgba(0, 20, 35, 0.25) 100%
+      transparent 60%,
+      rgba(255, 255, 255, 0.025)
     );
+  pointer-events: none;
 }
 
 .footer-cta-container {
-  width: min(1450px, calc(100% - 140px));
-  max-width: 1450px;
-
+  width: min(1160px, 100%);
   margin: 0 auto;
-
-  position: relative;
-  z-index: 2;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  gap: 40px;
+  gap: 35px;
 }
 
-
-/* =========================================
-   CTA TEXT
-========================================= */
+.footer-cta-content {
+  min-width: 0;
+  max-width: 700px;
+}
 
 .footer-cta-content h2 {
-  margin: 0 0 17px;
-
+  margin: 0 0 13px;
   color: #ffffff;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: clamp(32px, 4vw, 46px);
-  font-weight: 800;
-
-  line-height: 1.1;
+  font-size: clamp(27px, 3.4vw, 40px);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  text-wrap: balance;
 }
 
 .footer-cta-content p {
   margin: 0;
-
-  color: #ffffff;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: clamp(16px, 2vw, 22px);
-  font-weight: 500;
-
-  line-height: 1.5;
+  color: var(--footer-muted);
+  font-size: 15px;
+  line-height: 1.85;
 }
 
-
-/* =========================================
-   WHATSAPP BUTTON
-========================================= */
+/* WhatsApp booking button */
 
 .footer-whatsapp-btn {
-  width: min(430px, 100%);
-  height: clamp(64px, 8vw, 85px);
-
+  min-height: 58px;
   flex-shrink: 0;
-
-  padding: 0 30px;
-
-  border: none;
-  border-radius: 12px;
-
-  display: flex;
+  padding: 15px 24px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  gap: 18px;
-
-  background: #00d95f;
-
-  color: #ffffff;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: clamp(16px, 2vw, 22px);
-  font-weight: 700;
-
+  gap: 13px;
+  color: var(--footer-navy);
+  background: var(--footer-gold);
+  border: 1px solid var(--footer-gold);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
   cursor: pointer;
-
-  box-shadow:
-    0 8px 25px rgba(0, 215, 95, 0.25);
-
-  transition: 0.25s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .footer-whatsapp-btn:hover {
-  background: #00c853;
-
+  background: #ffd166;
+  border-color: #ffd166;
+  box-shadow: 0 10px 28px rgba(245, 184, 46, 0.2);
   transform: translateY(-3px);
+}
 
-  box-shadow:
-    0 12px 30px rgba(0, 215, 95, 0.35);
+.footer-whatsapp-btn:focus-visible,
+.footer-chat-link:focus-visible,
+.main-footer a:focus-visible {
+  outline: 3px solid var(--footer-gold);
+  outline-offset: 4px;
 }
 
 .footer-whatsapp-icon {
-  width: clamp(32px, 3.5vw, 43px);
-  height: clamp(32px, 3.5vw, 43px);
-
-  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
 }
 
 .footer-btn-arrow {
-  margin-left: auto;
-
-  font-size: clamp(26px, 3vw, 35px);
+  font-size: 21px;
+  line-height: 1;
+  transition: transform 0.25s ease;
 }
 
+.footer-whatsapp-btn:hover .footer-btn-arrow {
+  transform: translateX(4px);
+}
 
 /* =========================================
-   MAIN FOOTER
+   2. MAIN FOOTER
 ========================================= */
 
 .main-footer {
   width: 100%;
-
-  background:
-    linear-gradient(
-      110deg,
-      #001c31,
-      #00182b
-    );
-
   color: #ffffff;
+  background: var(--footer-navy);
 }
 
 .footer-container {
-  width: min(1450px, calc(100% - 140px));
-  max-width: 1450px;
-
+  width: min(1160px, calc(100% - 48px));
   margin: 0 auto;
-
-  padding: 50px 0 45px;
-
+  padding: 70px 0 58px;
   display: grid;
-
-  grid-template-columns:
-    minmax(260px, 1.4fr)
-    minmax(170px, 0.85fr)
-    minmax(190px, 1fr)
-    minmax(220px, 1.1fr);
-
-  gap: 65px;
+  grid-template-columns: 1.25fr 0.8fr 1.05fr 1.1fr;
+  gap: 42px;
+  align-items: start;
 }
 
+.footer-column {
+  min-width: 0;
+}
 
 /* =========================================
-   LOGO
+   3. BRAND / LOGO
 ========================================= */
 
 .footer-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
-
-  gap: 15px;
-
-  margin-bottom: 25px;
+  gap: 12px;
+  max-width: 100%;
 }
 
 .footer-logo-icon {
-  width: clamp(68px, 7vw, 92px);
-  height: clamp(68px, 7vw, 92px);
-
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: #ffffff;
+  color: var(--footer-gold);
+  background: rgba(245, 184, 46, 0.09);
+  border: 1px solid rgba(245, 184, 46, 0.3);
+  border-radius: 12px;
 }
 
 .footer-logo-icon svg {
-  width: 100%;
-  height: 100%;
+  display: block;
+  width: 35px;
+  height: 35px;
 }
 
 .footer-logo-text {
+  min-width: 0;
   display: flex;
   flex-direction: column;
-
-  font-family: Arial, Helvetica, sans-serif;
+  gap: 3px;
 }
 
 .footer-logo-text strong {
-  font-size: clamp(34px, 4vw, 47px);
-  font-weight: 800;
-
-  line-height: 0.95;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.1;
 }
 
 .footer-logo-text span {
-  margin-top: 8px;
-
-  font-size: clamp(14px, 1.5vw, 19px);
+  color: var(--footer-gold);
+  font-size: 10px;
   font-weight: 800;
-
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  line-height: 1.5;
 }
-
-
-/* =========================================
-   ABOUT
-========================================= */
 
 .footer-about {
-  margin: 0;
-
-  color: #d6dce2;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: clamp(15px, 1.6vw, 17px);
-
-  line-height: 1.55;
+  max-width: 280px;
+  margin: 23px 0 0;
+  color: var(--footer-muted);
+  font-size: 14px;
+  line-height: 1.95;
 }
 
-
 /* =========================================
-   FOOTER TITLES
+   4. COLUMN HEADINGS
 ========================================= */
 
-.footer-column h3 {
-  margin: 7px 0 25px;
-
+.footer-column > h3 {
+  position: relative;
+  margin: 4px 0 27px;
+  padding-bottom: 15px;
   color: #ffffff;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: 16px;
   font-weight: 800;
+  line-height: 1.4;
 }
 
+.footer-column > h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 34px;
+  height: 3px;
+  background: var(--footer-gold);
+  border-radius: 5px;
+}
 
 /* =========================================
-   LINKS
+   5. QUICK LINKS & SERVICES
 ========================================= */
 
 .footer-links {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
   list-style: none;
+}
 
+.footer-links li {
   margin: 0;
   padding: 0;
 }
 
-.footer-links li {
-  margin-bottom: 13px;
-}
-
 .footer-links a {
-  color: #d1d7dd;
-
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  color: var(--footer-muted);
+  font-size: 13px;
+  line-height: 1.7;
   text-decoration: none;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: clamp(14px, 1.6vw, 17px);
-  font-weight: 500;
-
-  transition: 0.2s ease;
+  overflow-wrap: anywhere;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: #ffffff;
-
-  padding-left: 4px;
+  color: var(--footer-gold);
+  transform: translateX(4px);
 }
 
-
 /* =========================================
-   CONTACT
+   6. CONTACT DETAILS
 ========================================= */
 
 .footer-contact {
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .contact-item,
 .footer-chat-link {
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 17px;
   display: flex;
-  align-items: center;
-
-  gap: 16px;
-
-  margin-bottom: 20px;
-
-  color: #d1d7dd;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: clamp(14px, 1.6vw, 17px);
-  font-weight: 500;
-}
-
-.contact-item a {
-  color: #d1d7dd;
-
-  text-decoration: none;
-}
-
-.contact-item a:hover {
-  color: #ffffff;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--footer-muted);
+  font-size: 13px;
+  line-height: 1.8;
 }
 
 .contact-icon {
-  width: 27px;
-
-  flex-shrink: 0;
-
-  color: #ffffff;
-
-  font-size: 24px;
-
-  text-align: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--footer-gold);
+  background: rgba(245, 184, 46, 0.09);
+  border: 1px solid rgba(245, 184, 46, 0.16);
+  border-radius: 8px;
+  font-size: 13px;
 }
 
+.contact-item > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 
-/* WhatsApp contact button */
+.contact-item a {
+  min-width: 0;
+  color: var(--footer-muted);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+  color: var(--footer-gold);
+}
 
 .footer-chat-link {
   padding: 0;
-
-  border: none;
-
+  border: 0;
   background: transparent;
-
-  cursor: pointer;
-
   text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 .footer-chat-link:hover {
-  color: #00d95f;
+  color: var(--footer-gold);
 }
 
-
 /* =========================================
-   FOOTER BOTTOM
+   7. COPYRIGHT BAR
 ========================================= */
 
 .footer-bottom {
-  width: min(1450px, calc(100% - 140px));
-  max-width: 1450px;
-
-  margin: 0 auto;
-
-  padding: 20px 0;
-
-  border-top:
-    1px solid rgba(255, 255, 255, 0.12);
-
+  width: 100%;
+  padding: 22px 24px;
+  border-top: 1px solid var(--footer-border);
   text-align: center;
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .footer-bottom p {
   margin: 0;
-
-  color: #98a5af;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: clamp(12px, 1.4vw, 14px);
+  color: #9eacbb;
+  font-size: 12px;
+  line-height: 1.8;
 }
 
-
 /* =========================================
-   RESPONSIVE - LAPTOP
+   TABLET / SMALL LAPTOP
 ========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
+  .footer-cta {
+    padding: 48px 24px;
+  }
 
-  .footer-cta-container,
-  .footer-container,
-  .footer-bottom {
-    width: calc(100% - 48px);
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 50px;
+    row-gap: 45px;
+    padding: 55px 0 45px;
   }
 
   .footer-cta-content h2 {
-    font-size: clamp(30px, 4vw, 38px);
-  }
-
-  .footer-cta-content p {
-    font-size: clamp(15px, 1.8vw, 18px);
-  }
-
-  .footer-whatsapp-btn {
-    width: min(350px, 100%);
-
-    font-size: 18px;
-  }
-
-  .footer-container {
-    gap: 35px;
-
-    grid-template-columns:
-      minmax(220px, 1.3fr)
-      minmax(160px, 0.8fr)
-      minmax(180px, 1fr)
-      minmax(200px, 1.1fr);
-  }
-
-  .footer-logo-text strong {
-    font-size: clamp(30px, 3.5vw, 37px);
+    font-size: clamp(27px, 3.5vw, 35px);
   }
 }
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 850px) {
-
-  .footer-cta {
-    min-height: auto;
-  }
-
-  .footer-cta-container {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    justify-content: center;
-
-    gap: 28px;
-
-    padding: 38px 0;
-  }
-
-  .footer-whatsapp-btn {
-    width: 350px;
-    max-width: 100%;
-  }
-
-  .footer-container {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 32px;
-
-    padding-top: 42px;
-  }
-}
-
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 550px) {
-
+@media (max-width: 600px) {
   .footer-cta {
-    min-height: auto;
-
-    background-position: 60% center;
+    padding: 43px 20px;
   }
 
   .footer-cta-container {
-    width: calc(100% - 24px);
-
-    padding: 34px 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
   }
 
   .footer-cta-content h2 {
-    font-size: 30px;
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
   }
 
   .footer-cta-content p {
-    font-size: 15px;
-
-    line-height: 1.5;
-  }
-
-  .footer-cta-content p br {
-    display: none;
+    font-size: 14px;
+    line-height: 1.85;
   }
 
   .footer-whatsapp-btn {
     width: 100%;
-
-    height: 58px;
-
-    padding: 0 20px;
-
-    font-size: 15px;
+    min-height: 54px;
+    padding: 14px 17px;
+    font-size: 14px;
   }
-
-  .footer-whatsapp-icon {
-    width: 30px;
-    height: 30px;
-  }
-
-  .footer-btn-arrow {
-    font-size: 24px;
-  }
-
-
-  /* FOOTER */
 
   .footer-container {
-    width: calc(100% - 24px);
-
-    grid-template-columns: 1fr;
-
-    gap: 30px;
-
-    padding: 36px 0 30px;
+    width: calc(100% - 40px);
+    padding: 46px 0 36px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 24px;
   }
 
   .footer-logo {
-    margin-bottom: 20px;
+    gap: 9px;
   }
 
   .footer-logo-icon {
-    width: 62px;
-    height: 62px;
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .footer-logo-icon svg {
+    width: 29px;
+    height: 29px;
   }
 
   .footer-logo-text strong {
-    font-size: 32px;
+    font-size: 21px;
+    letter-spacing: 1.5px;
   }
 
   .footer-logo-text span {
-    font-size: 14px;
+    font-size: 9px;
+    letter-spacing: 1.2px;
   }
 
   .footer-about {
-    font-size: 14px;
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.85;
   }
 
-  .footer-column h3 {
-    margin-bottom: 16px;
-
-    font-size: 19px;
+  .footer-column > h3 {
+    margin: 3px 0 22px;
+    padding-bottom: 12px;
+    font-size: 15px;
   }
 
-  .footer-links a,
+  .footer-links {
+    gap: 12px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+  }
+
   .contact-item,
   .footer-chat-link {
-    font-size: 14px;
+    gap: 9px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .contact-icon {
+    width: 27px;
+    height: 27px;
+    flex-basis: 27px;
+    border-radius: 7px;
   }
 
   .footer-bottom {
-    width: calc(100% - 24px);
-  }
-}
-
-
-@media (max-width: 420px) {
-
-  .footer-cta-container,
-  .footer-container,
-  .footer-bottom {
-    width: calc(100% - 18px);
-  }
-
-  .footer-cta-content h2 {
-    font-size: 26px;
-  }
-
-  .footer-cta-content p {
-    font-size: 14px;
-  }
-
-  .footer-whatsapp-btn {
-    height: 54px;
-
-    font-size: 14px;
-  }
-
-  .footer-logo-text strong {
-    font-size: 28px;
-  }
-
-  .footer-logo-text span {
-    font-size: 13px;
-  }
-
-  .footer-about,
-  .footer-links a,
-  .contact-item,
-  .footer-chat-link {
-    font-size: 13px;
-  }
-
-  .footer-column h3 {
-    font-size: 18px;
+    padding: 19px 16px;
   }
 
   .footer-bottom p {
     font-size: 11px;
+  }
+}
+
+/* =========================================
+   EXTRA-SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .footer-cta {
+    padding-inline: 16px;
+  }
+
+  .footer-container {
+    width: calc(100% - 32px);
+    column-gap: 17px;
+    row-gap: 32px;
+  }
+
+  .footer-logo {
+    align-items: flex-start;
+  }
+
+  .footer-logo-icon {
+    width: 35px;
+    height: 35px;
+    flex-basis: 35px;
+    border-radius: 8px;
+  }
+
+  .footer-logo-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .footer-logo-text strong {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .footer-logo-text span {
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .footer-about {
+    font-size: 12px;
+  }
+
+  .footer-column > h3 {
+    font-size: 14px;
+  }
+
+  .footer-links a,
+  .contact-item,
+  .footer-chat-link {
+    font-size: 11px;
+  }
+
+  .contact-item,
+  .footer-chat-link {
+    gap: 7px;
+  }
+
+  .contact-icon {
+    width: 23px;
+    height: 23px;
+    flex-basis: 23px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-cta *,
+  .footer-cta *::before,
+  .main-footer *,
+  .main-footer *::before {
+    animation: none !important;
+    transition: none !important;
   }
 }
