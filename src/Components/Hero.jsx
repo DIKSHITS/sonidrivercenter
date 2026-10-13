@@ -1,7 +1,7 @@
 
 import React from "react";
 import "./Hero.css";
-import heroImage from "./images/hero21.png";
+import heroImage from "./images/driver-banner.png";
 
 function Hero() {
   const whatsappNumber = "919831102673";
