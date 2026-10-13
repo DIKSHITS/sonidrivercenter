@@ -1,858 +1,1167 @@
 
-/* =========================================
-   PROFESSIONAL DRIVER SECTION
-========================================= */
+/* ==========================================
+   SONI DRIVER CENTER
+   Driver Section — Full Responsive CSS
+   Desktop | Laptop | Tablet | Mobile
+========================================== */
+
+:root {
+  --driver-navy: #101d2b;
+  --driver-navy-light: #1c3045;
+  --driver-gold: #f5b82e;
+  --driver-gold-hover: #ffd36a;
+  --driver-white: #ffffff;
+  --driver-text: #26364a;
+  --driver-muted: #68778a;
+  --driver-light-bg: #f5f7fa;
+  --driver-border: #e6ebf1;
+  --driver-shadow: 0 20px 55px rgba(0, 0, 0, 0.16);
+}
+
+/* Reset section-specific box sizing */
+.driver-section *,
+.driver-section *::before,
+.driver-section *::after,
+.how-section *,
+.how-section *::before,
+.how-section *::after {
+  box-sizing: border-box;
+}
+
+.driver-section,
+.how-section {
+  width: 100%;
+  font-family: inherit;
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
 
 .driver-section {
-  width: 100%;
-  min-height: clamp(520px, 68vw, 540px);
-
   position: relative;
-
+  isolation: isolate;
   overflow: hidden;
-
+  padding: 76px 24px 0;
+  color: var(--driver-white);
   background:
-    #00243d;
-
-  color: #ffffff;
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(245, 184, 46, 0.08),
+      transparent 26%
+    ),
+    linear-gradient(
+      120deg,
+      #0d1926 0%,
+      #14283a 55%,
+      #20394c 100%
+    );
 }
 
-
-/* =========================================
-   BACKGROUND IMAGE
-========================================= */
+.driver-section::before,
+.driver-section::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  border: 1px solid rgba(245, 184, 46, 0.15);
+  border-radius: 50%;
+}
 
 .driver-section::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background-size: cover;
-  background-position: right center;
-
-  opacity: 0.9;
-
-  z-index: 0;
+  top: -210px;
+  right: -120px;
+  width: 460px;
+  height: 460px;
 }
 
-
-/* =========================================
-   BLUE OVERLAY
-========================================= */
-
-.driver-overlay {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      #002b4a 0%,
-      rgba(0, 39, 67, 0.98) 28%,
-      rgba(0, 39, 67, 0.84) 45%,
-      rgba(0, 39, 67, 0.28) 72%,
-      rgba(0, 39, 67, 0.05) 100%
-    );
-
-  z-index: 1;
+.driver-section::after {
+  right: -110px;
+  bottom: 20px;
+  width: 300px;
+  height: 300px;
+  border-color: rgba(255, 255, 255, 0.07);
 }
 
-
-/* =========================================
-   DRIVER CONTAINER
-========================================= */
+/* Main two-column layout */
 
 .driver-container {
   position: relative;
-
-  z-index: 2;
-
-  width: 100%;
-  max-width: 1450px;
-
-  min-height: clamp(380px, 52vw, 420px);
-
-  margin: 0 auto;
-
-  display: flex;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-
-  padding: clamp(34px, 4.5vw, 50px) clamp(20px, 4vw, 55px) 20px;
+  gap: 60px;
+  width: 100%;
+  max-width: 1416px;
+  margin: 0 auto;
 }
 
-
-/* =========================================
-   LEFT CONTENT
-========================================= */
+/* Left content */
 
 .driver-content {
-  width: min(52%, 720px);
-
-  position: relative;
-
-  z-index: 5;
+  width: 100%;
+  max-width: 650px;
+  min-width: 0;
+  padding: 12px 0 36px;
 }
-
 
 .driver-small-title {
-  margin: 0 0 22px;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(13px, 1.5vw, 18px);
-
-  font-weight: 700;
-
-  letter-spacing: 3px;
-
-  color: #ffffff;
-}
-
-
-.driver-content h2 {
-  margin: 0;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(34px, 4.8vw, 49px);
-
-  line-height: 1.12;
-
-  font-weight: 800;
-
-  color: #ffffff;
-}
-
-
-.driver-description {
-  margin: 22px 0 28px;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(15px, 1.7vw, 18px);
-
-  line-height: 1.55;
-
-  color: #ffffff;
-}
-
-
-/* =========================================
-   WHATSAPP BUTTON
-========================================= */
-
-.driver-whatsapp-btn {
-  width: min(465px, 100%);
-  max-width: 100%;
-
-  height: 67px;
-
-  border: none;
-
-  border-radius: 10px;
-
-  background: #00d95f;
-
-  color: #ffffff;
-
   display: flex;
   align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  color: var(--driver-gold);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.driver-small-title::before {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 3px;
+  content: "";
+  border-radius: 10px;
+  background: var(--driver-gold);
+}
+
+/* Main heading */
+
+.driver-content h1,
+.driver-content h2 {
+  margin: 0;
+  color: var(--driver-white);
+  font-size: clamp(38px, 4.2vw, 66px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -2px;
+  overflow-wrap: anywhere;
+}
+
+.driver-title-highlight {
+  display: block;
+  margin-top: 8px;
+  color: var(--driver-gold);
+}
+
+/* Description */
+
+.driver-description {
+  max-width: 620px;
+  margin: 26px 0 22px;
+  color: #c7d1dc;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+/* Trust message */
+
+.driver-trust-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 28px;
+  color: #e2e8ef;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.driver-trust-check {
+  display: inline-flex;
+  flex: 0 0 28px;
+  align-items: center;
   justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: var(--driver-navy);
+  background: var(--driver-gold);
+  font-size: 17px;
+  font-weight: 900;
+}
 
-  gap: 13px;
+/* ==========================================
+   WHATSAPP CTA BUTTON
+========================================== */
 
-  padding: 0 25px;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(15px, 1.8vw, 19px);
-
-  font-weight: 700;
-
+.driver-whatsapp-btn,
+.how-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  max-width: 100%;
+  padding: 15px 24px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: var(--driver-navy);
+  background: var(--driver-gold);
+  box-shadow: 0 10px 26px rgba(245, 184, 46, 0.14);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
-
   transition:
-    transform 0.25s ease,
     background 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
+.driver-whatsapp-btn {
+  min-width: 290px;
+}
 
-.driver-whatsapp-btn:hover {
-  background: #00c853;
-
+.driver-whatsapp-btn:hover,
+.how-whatsapp-btn:hover {
+  color: var(--driver-navy);
+  background: var(--driver-gold-hover);
+  box-shadow: 0 14px 32px rgba(245, 184, 46, 0.22);
   transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 30px rgba(0, 217, 95, 0.3);
 }
 
+.driver-whatsapp-btn:focus-visible,
+.how-whatsapp-btn:focus-visible {
+  outline: 3px solid var(--driver-white);
+  outline-offset: 4px;
+}
+
+/* IMPORTANT: prevent oversized icon */
 
 .driver-whatsapp-icon {
-  width: 35px;
-  height: 35px;
-
-  flex-shrink: 0;
+  display: inline-flex;
+  flex: 0 0 22px;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  min-width: 0;
+  font-size: 21px;
+  line-height: 1;
 }
 
+.driver-whatsapp-icon svg,
+.driver-whatsapp-icon img {
+  display: block;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 
 .driver-btn-arrow {
-  font-size: 29px;
-
-  margin-left: auto;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  font-size: 24px;
+  line-height: 1;
+  transition: transform 0.25s ease;
 }
 
+.driver-whatsapp-btn:hover .driver-btn-arrow {
+  transform: translateX(4px);
+}
 
-/* =========================================
-   DRIVER IMAGE
-========================================= */
+.driver-response-note {
+  margin: 14px 0 0;
+  color: #aebdcb;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   DRIVER IMAGE CARD
+========================================== */
 
 .driver-image-container {
-  position: absolute;
-
-  right: 0;
-  top: 0;
-
-  width: 59%;
-  height: 100%;
-
-  z-index: 2;
-
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 590px;
+  min-width: 0;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 24px;
+  background: var(--driver-navy-light);
+  box-shadow: var(--driver-shadow);
 }
 
+/* Photo fills the complete card */
 
 .driver-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
   width: 100%;
   height: 100%;
-
+  max-width: none;
+  margin: 0;
+  border: 0;
+  border-radius: inherit;
   object-fit: cover;
-
-  object-position: center center;
-
-  display: block;
+  object-position: center;
 }
 
+/* Disable oversized decorative circle */
 
-/* =========================================
-   FEATURES
-========================================= */
+.driver-image-glow {
+  display: none !important;
+}
+
+/* Brand caption over photo */
+
+.driver-image-caption {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 15px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  color: var(--driver-navy);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.driver-caption-mark {
+  display: flex;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  color: var(--driver-navy);
+  background: var(--driver-gold);
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.driver-image-caption > div {
+  min-width: 0;
+}
+
+.driver-image-caption strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--driver-navy);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.driver-image-caption span {
+  display: block;
+  color: var(--driver-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   FEATURE STRIP
+========================================== */
 
 .driver-features {
   position: relative;
-
-  z-index: 5;
-
-  width: 100%;
-  max-width: 1450px;
-
-  margin: -5px auto 0;
-
-  min-height: 100px;
-
-  padding: 0 clamp(20px, 4vw, 55px) 25px;
-
-  display: flex;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: 1416px;
+  margin: 0 auto;
+  padding: 27px 28px;
+  border: 1px solid var(--driver-border);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+  color: var(--driver-text);
+  background: var(--driver-white);
+  box-shadow: 0 -5px 28px rgba(0, 0, 0, 0.04);
 }
-
 
 .driver-feature {
   display: flex;
   align-items: center;
-
-  gap: 13px;
-
-  color: #ffffff;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(13px, 1.5vw, 17px);
-
-  font-weight: 700;
-
-  white-space: nowrap;
+  justify-content: center;
+  gap: 11px;
+  min-width: 0;
+  padding: 5px;
 }
-
 
 .driver-feature-icon {
-  width: 37px;
-  height: 37px;
-
-  border: 2px solid #ffffff;
-
-  border-radius: 50%;
-
   display: flex;
+  flex: 0 0 37px;
   align-items: center;
   justify-content: center;
-
-  font-size: 18px;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #f5d98e;
+  border-radius: 50%;
+  color: var(--driver-navy);
+  background: #fff4d5;
+  font-size: 19px;
+  font-weight: 900;
 }
 
-
-.driver-feature-divider {
-  width: 1px;
-  height: 38px;
-
-  background: rgba(255, 255, 255, 0.35);
+.driver-feature span:last-child {
+  color: var(--driver-text);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.6;
 }
 
-
-/* =========================================
+/* ==========================================
    HOW IT WORKS
-========================================= */
+========================================== */
 
 .how-section {
-  width: 100%;
-
-  background: #ffffff;
-
-  padding: clamp(32px, 4vw, 38px) 0 clamp(50px, 5vw, 65px);
+  overflow: hidden;
+  padding: 90px 24px 100px;
+  color: var(--driver-text);
+  background: var(--driver-light-bg);
 }
-
-
-/* =========================================
-   HOW HEADING
-========================================= */
 
 .how-heading {
+  max-width: 850px;
+  margin: 0 auto;
   text-align: center;
-
-  padding: 0 20px;
 }
-
 
 .how-small-title {
-  margin: 0 0 8px;
-
-  color: #4f7da8;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 16px;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0 0 15px;
+  color: #a97608;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  line-height: 1.6;
+  text-transform: uppercase;
 }
 
+.how-small-title::before,
+.how-small-title::after {
+  width: 24px;
+  height: 2px;
+  content: "";
+  border-radius: 10px;
+  background: var(--driver-gold);
+}
 
 .how-heading h2 {
   margin: 0;
-
-  color: #001b35;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(28px, 4vw, 40px);
-
+  color: var(--driver-navy);
+  font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 800;
-
-  line-height: 1.2;
+  line-height: 1.25;
+  letter-spacing: -1px;
 }
 
+.how-subtitle {
+  max-width: 620px;
+  margin: 16px auto 0;
+  color: var(--driver-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
 
 .how-line {
   width: 68px;
   height: 4px;
-
-  margin: 12px auto 35px;
-
-  background: #f5ce00;
-
-  border-radius: 5px;
+  margin: 24px auto 0;
+  border-radius: 10px;
+  background: var(--driver-gold);
 }
 
-
-/* =========================================
-   STEPS
-========================================= */
+/* ==========================================
+   STEP CARDS
+========================================== */
 
 .steps-container {
-  width: min(1320px, calc(100% - 60px));
-
-  max-width: 1320px;
-
-  margin: 0 auto;
-
   display: grid;
-
-  grid-template-columns:
-    1fr
-    70px
-    1fr
-    70px
-    1fr;
-
-  align-items: start;
-
-  gap: 15px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+  max-width: 1180px;
+  margin: 58px auto 0;
 }
-
 
 .step-item {
-  text-align: center;
+  position: relative;
+  min-width: 0;
+  padding: 30px 25px;
+  border: 1px solid #e5eaf0;
+  border-radius: 18px;
+  background: var(--driver-white);
+  box-shadow: 0 12px 35px rgba(16, 29, 43, 0.045);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-
-/* =========================================
-   STEP TOP
-========================================= */
+.step-item:hover {
+  transform: translateY(-5px);
+  border-color: #f1d28a;
+  box-shadow: 0 18px 40px rgba(16, 29, 43, 0.09);
+}
 
 .step-top {
-  min-height: 105px;
-
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  gap: 45px;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 26px;
 }
-
 
 .step-number {
-  width: 72px;
-  height: 72px;
-
-  border-radius: 50%;
-
-  background: #e9f0f8;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  color: #164b86;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 25px;
-
-  font-weight: 800;
+  min-width: 46px;
+  height: 46px;
+  padding: 0 9px;
+  border-radius: 11px;
+  color: var(--driver-navy);
+  background: #fff0c7;
+  font-size: 16px;
+  font-weight: 900;
 }
-
 
 .step-icon {
-  width: 96px;
-  height: 96px;
-
-  border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background:
-    linear-gradient(
-      145deg,
-      #075fba,
-      #0c4e91
-    );
-
-  color: #ffffff;
-
-  box-shadow:
-    0 5px 15px rgba(0, 73, 145, 0.15);
+  width: 56px;
+  height: 56px;
+  border: 1px solid #f4dfaa;
+  border-radius: 15px;
+  color: #a97608;
+  background: #fffaed;
 }
-
 
 .step-icon svg {
-  width: 46px;
-  height: 46px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  max-width: 100%;
 }
-
-
-/* =========================================
-   STEP CONTENT
-========================================= */
 
 .step-item h3 {
-  margin: 15px 0 7px;
-
-  color: #071d35;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(19px, 2vw, 22px);
-
+  margin: 0 0 11px;
+  color: var(--driver-navy);
+  font-size: 20px;
   font-weight: 800;
+  line-height: 1.4;
 }
-
 
 .step-item p {
   margin: 0;
-
-  color: #626a73;
-
-  font-family: Arial, sans-serif;
-
-  font-size: clamp(14px, 1.6vw, 17px);
-
-  line-height: 1.45;
+  color: var(--driver-muted);
+  font-size: 14px;
+  line-height: 1.9;
 }
 
-
-/* =========================================
-   STEP ARROW
-========================================= */
+.step-bottom-line {
+  width: 44px;
+  height: 3px;
+  margin-top: 23px;
+  border-radius: 10px;
+  background: var(--driver-gold);
+}
 
 .step-arrow {
-  height: 105px;
-
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: #71808f;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 65px;
-
-  font-weight: 200;
+  width: 24px;
+  height: 24px;
+  color: #b17c08;
+  font-size: 24px;
+  font-weight: 700;
+  transform: translate(50%, -50%);
+  pointer-events: none;
 }
 
+/* ==========================================
+   BOTTOM CALL TO ACTION
+========================================== */
 
-/* =========================================
-   LARGE TABLET
-========================================= */
-
-@media (max-width: 1150px) {
-
-  .driver-container {
-    padding-left: 30px;
-  }
-
-  .driver-content h2 {
-    font-size: clamp(36px, 4vw, 40px);
-  }
-
-  .driver-description {
-    font-size: clamp(15px, 1.5vw, 16px);
-  }
-
-  .driver-feature {
-    font-size: 13px;
-  }
-
-  .driver-features {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .steps-container {
-    width: calc(100% - 40px);
-  }
-
-  .step-top {
-    gap: 20px;
-  }
-
-  .step-number {
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
-  }
-
-  .step-icon {
-    width: 80px;
-    height: 80px;
-  }
-
-  .step-icon svg {
-    width: 38px;
-    height: 38px;
-  }
-
+.how-bottom-cta {
+  margin: 48px auto 0;
+  text-align: center;
 }
 
+.how-bottom-cta p {
+  margin: 0 0 20px;
+  color: var(--driver-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
 
-/* =========================================
-   TABLET
-========================================= */
+.how-whatsapp-btn {
+  min-width: 190px;
+  min-height: 52px;
+  padding: 14px 23px;
+  border-radius: 10px;
+  font-size: 15px;
+}
 
-@media (max-width: 850px) {
+/* ==========================================
+   LAPTOPS
+========================================== */
 
+@media (max-width: 1200px) {
   .driver-section {
-    min-height: auto;
+    padding: 62px 28px 0;
   }
 
   .driver-container {
-    min-height: auto;
-
-    padding: 50px 22px 26px;
-
-    align-items: flex-start;
+    gap: 38px;
   }
 
-  .driver-content {
-    width: min(65%, 560px);
-  }
-
+  .driver-content h1,
   .driver-content h2 {
-    font-size: clamp(30px, 4.4vw, 35px);
-  }
-
-  .driver-description {
-    font-size: 15px;
-  }
-
-  .driver-description br {
-    display: none;
+    font-size: clamp(38px, 4.5vw, 56px);
   }
 
   .driver-image-container {
-    width: 60%;
+    height: 510px;
   }
 
   .driver-features {
-    padding: 10px 18px 24px;
-
     gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 24px 18px;
   }
 
   .driver-feature {
-    font-size: 12px;
-    white-space: normal;
-    text-align: left;
+    gap: 8px;
   }
 
-  .driver-feature-icon {
-    width: 30px;
-    height: 30px;
+  .driver-feature span:last-child {
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+  .driver-section {
+    padding: 52px 24px 0;
+  }
+
+  .driver-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    max-width: 700px;
+  }
+
+  .driver-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .driver-content h1,
+  .driver-content h2 {
+    font-size: clamp(38px, 7vw, 56px);
+    letter-spacing: -1.5px;
+  }
+
+  .driver-description {
+    max-width: 650px;
+    font-size: 15px;
+  }
+
+  .driver-image-container {
+    height: 430px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .driver-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 700px;
+    margin-top: 28px;
+    padding: 22px;
+  }
+
+  .driver-feature {
+    justify-content: flex-start;
+    padding: 7px;
   }
 
   .steps-container {
-    grid-template-columns: 1fr;
+    gap: 17px;
+    margin-top: 42px;
+  }
 
-    width: calc(100% - 32px);
+  .step-item {
+    padding: 23px 18px;
+  }
 
-    gap: 35px;
+  .step-item h3 {
+    font-size: 17px;
+  }
+
+  .step-arrow {
+    right: -17px;
+    width: 18px;
+    font-size: 19px;
+  }
+
+  .how-section {
+    padding: 72px 24px 78px;
+  }
+}
+
+/* ==========================================
+   MOBILE PHONES
+========================================== */
+
+@media (max-width: 600px) {
+  .driver-section {
+    padding: 40px 18px 0;
+  }
+
+  .driver-section::before {
+    top: -120px;
+    right: -140px;
+    width: 280px;
+    height: 280px;
+  }
+
+  .driver-section::after {
+    right: -120px;
+    bottom: 180px;
+    width: 190px;
+    height: 190px;
+  }
+
+  .driver-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 27px;
+  }
+
+  .driver-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .driver-small-title {
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+
+  .driver-small-title::before {
+    flex-basis: 23px;
+    width: 23px;
+    height: 2px;
+  }
+
+  .driver-content h1,
+  .driver-content h2 {
+    font-size: clamp(33px, 8.5vw, 45px);
+    line-height: 1.16;
+    letter-spacing: -1.2px;
+  }
+
+  .driver-title-highlight {
+    margin-top: 5px;
+  }
+
+  .driver-description {
+    margin: 19px 0;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .driver-trust-note {
+    align-items: flex-start;
+    gap: 9px;
+    margin: 18px 0 23px;
+    font-size: 13px;
+  }
+
+  .driver-trust-check {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+  }
+
+  /* Compact mobile CTA: icon cannot overflow */
+  .driver-whatsapp-btn {
+    display: inline-flex;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .driver-whatsapp-icon {
+    display: inline-flex;
+    flex: 0 0 21px;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .driver-whatsapp-icon svg,
+  .driver-whatsapp-icon img {
+    display: block;
+    flex: 0 0 auto;
+    width: 21px;
+    height: 21px;
+    max-width: 21px;
+    max-height: 21px;
+    object-fit: contain;
+  }
+
+  .driver-whatsapp-btn .driver-btn-arrow {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1px;
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .driver-response-note {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* Image card */
+  .driver-image-container {
+    width: 100%;
+    height: 330px;
+    min-height: 0;
+    border-radius: 17px;
+  }
+
+  .driver-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .driver-image-caption {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    gap: 9px;
+    padding: 11px;
+    border-radius: 12px;
+  }
+
+  .driver-caption-mark {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+    font-size: 21px;
+  }
+
+  .driver-image-caption strong {
+    margin-bottom: 3px;
+    font-size: 12px;
+  }
+
+  .driver-image-caption span {
+    font-size: 10px;
+  }
+
+  /* Feature strip */
+  .driver-features {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .driver-feature {
+    justify-content: flex-start;
+    gap: 11px;
+    padding: 6px 2px;
+  }
+
+  .driver-feature-icon {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+  }
+
+  .driver-feature span:last-child {
+    font-size: 13px;
+  }
+
+  /* How it works */
+  .how-section {
+    padding: 56px 18px 62px;
+  }
+
+  .how-small-title {
+    gap: 6px;
+    margin-bottom: 13px;
+    font-size: 10px;
+    letter-spacing: 1.3px;
+  }
+
+  .how-small-title::before,
+  .how-small-title::after {
+    width: 16px;
+  }
+
+  .how-heading h2 {
+    font-size: clamp(26px, 7.2vw, 35px);
+    line-height: 1.25;
+    letter-spacing: -0.6px;
+  }
+
+  .how-subtitle {
+    margin-top: 13px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .how-line {
+    margin-top: 19px;
+  }
+
+  .steps-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    max-width: 440px;
+    margin-top: 32px;
+  }
+
+  .step-item {
+    padding: 22px 19px;
+    border-radius: 15px;
+  }
+
+  .step-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .step-top {
+    margin-bottom: 18px;
+  }
+
+  .step-number {
+    min-width: 42px;
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .step-icon {
+    width: 49px;
+    height: 49px;
+    border-radius: 12px;
+  }
+
+  .step-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .step-item h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+
+  .step-item p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .step-bottom-line {
+    margin-top: 17px;
   }
 
   .step-arrow {
     display: none;
   }
 
-  .step-top {
-    min-height: auto;
+  .how-bottom-cta {
+    margin-top: 32px;
   }
 
+  .how-bottom-cta p {
+    font-size: 13px;
+  }
+
+  .how-whatsapp-btn {
+    width: 100%;
+    max-width: 290px;
+    min-width: 0;
+    min-height: 50px;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
 }
 
+/* ==========================================
+   EXTRA-SMALL PHONES
+========================================== */
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
+@media (max-width: 360px) {
   .driver-section {
-    min-height: auto;
+    padding-right: 14px;
+    padding-left: 14px;
   }
 
-  .driver-section::before {
-    background-position: 68% center;
-  }
-
-  .driver-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0, 35, 60, 0.96) 0%,
-        rgba(0, 35, 60, 0.84) 55%,
-        rgba(0, 35, 60, 0.48) 100%
-      );
-  }
-
-  .driver-container {
-    min-height: auto;
-
-    padding: 40px 16px 18px;
-
-    display: block;
-  }
-
-  .driver-content {
-    width: 100%;
+  .driver-content h1,
+  .driver-content h2 {
+    font-size: 31px;
+    letter-spacing: -0.8px;
   }
 
   .driver-small-title {
-    font-size: 13px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 16px;
+    gap: 7px;
+    font-size: 9px;
+    letter-spacing: 1px;
   }
 
-  .driver-content h2 {
-    font-size: clamp(28px, 8vw, 34px);
-
-    line-height: 1.15;
-  }
-
-  .driver-description {
-    font-size: 15px;
-
-    line-height: 1.5;
-
-    margin-top: 18px;
+  .driver-small-title::before {
+    flex-basis: 19px;
+    width: 19px;
   }
 
   .driver-whatsapp-btn {
-    height: 57px;
+    gap: 7px;
+    min-height: 48px;
+    padding: 11px 12px;
+    font-size: 12px;
+  }
 
-    font-size: 15px;
+  .driver-whatsapp-icon {
+    flex-basis: 19px;
+    width: 19px;
+    height: 19px;
+    font-size: 18px;
+  }
 
-    width: 100%;
+  .driver-whatsapp-icon svg,
+  .driver-whatsapp-icon img {
+    width: 19px;
+    height: 19px;
+    max-width: 19px;
+    max-height: 19px;
+  }
+
+  .driver-whatsapp-btn .driver-btn-arrow {
+    font-size: 18px;
   }
 
   .driver-image-container {
-    width: 100%;
-    height: 240px;
-
-    top: auto;
-    bottom: 0;
-
-    opacity: 0.55;
+    height: 285px;
   }
 
-  .driver-features {
-    min-height: auto;
-
-    padding: 20px 14px 22px;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 18px;
-
-    background: #00243d;
+  .driver-image-caption {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    gap: 7px;
+    padding: 8px;
   }
 
-  .driver-feature {
-    font-size: 11px;
-
-    white-space: normal;
-
-    line-height: 1.3;
-  }
-
-  .driver-feature-divider {
-    display: none;
-  }
-
-  .how-section {
-    padding:
-      40px
-      0
-      50px;
-  }
-
-  .how-small-title {
-    font-size: 13px;
-  }
-
-  .how-heading h2 {
-    font-size: 28px;
-  }
-
-  .how-line {
-    margin-bottom: 30px;
-  }
-
-  .steps-container {
-    width: calc(100% - 20px);
-
-    gap: 38px;
-  }
-
-  .step-top {
-    gap: 25px;
-  }
-
-  .step-number {
-    width: 62px;
-    height: 62px;
-
+  .driver-caption-mark {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
     font-size: 19px;
   }
 
-  .step-icon {
-    width: 82px;
-    height: 82px;
+  .driver-image-caption strong {
+    font-size: 11px;
   }
 
-  .step-item h3 {
-    font-size: 20px;
-  }
-
-  .step-item p {
-    font-size: 15px;
-  }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 380px) {
-
-  .driver-content h2 {
-    font-size: 28px;
-  }
-
-  .driver-description {
-    font-size: 14px;
-  }
-
-  .driver-feature {
+  .driver-image-caption span {
     font-size: 10px;
   }
 
-  .how-heading h2 {
-    font-size: 24px;
-  }
-
-  .driver-image-container {
-    height: 220px;
-  }
-
   .driver-features {
-    grid-template-columns: 1fr;
+    padding: 13px 12px;
   }
 
-  .step-number {
-    width: 56px;
-    height: 56px;
-
-    font-size: 18px;
+  .driver-feature span:last-child {
+    font-size: 12px;
   }
 
-  .step-icon {
-    width: 76px;
-    height: 76px;
+  .how-section {
+    padding-right: 14px;
+    padding-left: 14px;
   }
 
-  .step-icon svg {
-    width: 34px;
-    height: 34px;
+  .step-item {
+    padding: 20px 16px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .driver-whatsapp-btn,
+  .how-whatsapp-btn,
+  .driver-btn-arrow,
+  .step-item {
+    transition: none;
   }
 
-  .step-item h3 {
-    font-size: 18px;
+  .driver-whatsapp-btn:hover,
+  .how-whatsapp-btn:hover,
+  .step-item:hover {
+    transform: none;
   }
-
-  .step-item p {
-    font-size: 14px;
-  }
-
 }

@@ -1,61 +1,180 @@
-
 import React from "react";
 import "./DriverSection.css";
 import driverBannerImage from "./images/driver-banner.png";
 
-function DriverSection() {
-
+const DriverSection = () => {
   const whatsappNumber = "919831102673";
 
   const openWhatsApp = () => {
+    const message =
+      "Hello Soni Driver Center, I want to hire a driver.";
+
     window.open(
-      `https://wa.me/${whatsappNumber}?text=Hello%20Soni%20Driver%20Center,%20I%20want%20to%20hire%20a%20driver.`,
-      "_blank"
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const features = [
+    "Trained & Experienced",
+    "Polite & Professional",
+    "Knowledge of Local Routes",
+    "Safe & Reliable",
+  ];
+
+  const steps = [
+    {
+      number: "01",
+      title: "Choose Your Service",
+      description:
+        "Select car rental or professional driver hire according to your needs.",
+      icon: "car",
+    },
+    {
+      number: "02",
+      title: "Share Your Details",
+      description:
+        "Tell us your travel date, pickup location, destination, and requirements.",
+      icon: "message",
+    },
+    {
+      number: "03",
+      title: "Get Confirmation",
+      description:
+        "Our team will discuss availability and confirm your travel arrangements.",
+      icon: "calendar",
+    },
+  ];
+
+  const renderStepIcon = (icon) => {
+    if (icon === "car") {
+      return (
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path
+            d="M12 35l5-15h30l5 15"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="4"
+            strokeLinejoin="round"
+          />
+          <rect
+            x="7"
+            y="31"
+            width="50"
+            height="19"
+            rx="5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="4"
+          />
+          <circle cx="19" cy="49" r="5" fill="currentColor" />
+          <circle cx="45" cy="49" r="5" fill="currentColor" />
+          <path
+            d="M14 39h8m20 0h8"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+    }
+
+    if (icon === "message") {
+      return (
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path
+            d="M10 12h44v32H31L17 54v-10h-7z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="4"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M20 24h24M20 33h17"
+            stroke="currentColor"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+    }
+
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect
+          x="10"
+          y="14"
+          width="44"
+          height="42"
+          rx="5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="4"
+        />
+        <path
+          d="M21 8v12M43 8v12M10 27h44"
+          stroke="currentColor"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
+        <path
+          d="m23 39 6 6 13-12"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
     );
   };
 
   return (
     <>
-      {/* =========================================
-          PROFESSIONAL DRIVER SECTION
-      ========================================= */}
-
-      <section className="driver-section">
-
-        <div className="driver-overlay"></div>
+      {/* PROFESSIONAL DRIVER HERO */}
+      <section className="driver-section" id="drivers">
+        <div className="driver-overlay" aria-hidden="true" />
 
         <div className="driver-container">
-
-          {/* LEFT CONTENT */}
           <div className="driver-content">
-
             <p className="driver-small-title">
-              PROFESSIONAL DRIVERS
+              Professional Driver Services
             </p>
 
             <h2>
               Hire a Trusted Driver
-              <br />
-              for Your Journey
+              <span className="driver-title-highlight">
+                for Your Journey
+              </span>
             </h2>
 
             <p className="driver-description">
-              Our drivers are experienced, well-behaved and
-              <br />
-              familiar with Kolkata and outstation routes.
-              <br />
-              Travel safely and comfortably with Soni Driver Center.
+              Looking for a professional driver in Kolkata?
+              Soni Driver Center helps you arrange driver services
+              for local travel, outstation journeys, and your
+              everyday transportation needs.
             </p>
 
+            <div className="driver-trust-note">
+              <span className="driver-trust-check" aria-hidden="true">
+                ✓
+              </span>
+              <span>
+                Convenient enquiries. Personal assistance.
+              </span>
+            </div>
+
             <button
+              type="button"
               className="driver-whatsapp-btn"
               onClick={openWhatsApp}
+              aria-label="Enquire about driver services on WhatsApp"
             >
-
               <svg
                 className="driver-whatsapp-icon"
                 viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   fill="currentColor"
@@ -63,341 +182,117 @@ function DriverSection() {
                 />
               </svg>
 
-              <span>
-                Inquire Now on WhatsApp
-              </span>
+              <span>Enquire on WhatsApp</span>
 
-              <span className="driver-btn-arrow">
+              <span className="driver-btn-arrow" aria-hidden="true">
                 →
               </span>
-
             </button>
 
+            <p className="driver-response-note">
+              Tell us your requirements to get started.
+            </p>
           </div>
 
-
-          {/* RIGHT DRIVER IMAGE */}
-
           <div className="driver-image-container">
+            <div
+              className="driver-image-glow"
+              aria-hidden="true"
+            />
 
             <img
               src={driverBannerImage}
-              alt="Professional Driver"
+              alt="Professional driver services from Soni Driver Center"
               className="driver-image"
+              loading="lazy"
             />
 
+            <div className="driver-image-caption">
+              <span className="driver-caption-mark">S</span>
+              <span>
+                <strong>Soni Driver Center</strong>
+                <small>Your journey, made convenient</small>
+              </span>
+            </div>
           </div>
-
         </div>
 
-
-        {/* =========================================
-            DRIVER FEATURES
-        ========================================= */}
-
+        {/* SERVICE HIGHLIGHTS */}
         <div className="driver-features">
-
-          <div className="driver-feature">
-
-            <div className="driver-feature-icon">
-              ✓
+          {features.map((feature) => (
+            <div className="driver-feature" key={feature}>
+              <span className="driver-feature-icon" aria-hidden="true">
+                ✓
+              </span>
+              <span>{feature}</span>
             </div>
-
-            <span>
-              Trained & Experienced
-            </span>
-
-          </div>
-
-
-          <div className="driver-feature-divider"></div>
-
-
-          <div className="driver-feature">
-
-            <div className="driver-feature-icon">
-              ✓
-            </div>
-
-            <span>
-              Polite & Professional
-            </span>
-
-          </div>
-
-
-          <div className="driver-feature-divider"></div>
-
-
-          <div className="driver-feature">
-
-            <div className="driver-feature-icon">
-              ✓
-            </div>
-
-            <span>
-              Knowledge of Local Routes
-            </span>
-
-          </div>
-
-
-          <div className="driver-feature-divider"></div>
-
-
-          <div className="driver-feature">
-
-            <div className="driver-feature-icon">
-              ✓
-            </div>
-
-            <span>
-              Safe & Reliable
-            </span>
-
-          </div>
-
+          ))}
         </div>
-
       </section>
 
-
-      {/* =========================================
-          HOW IT WORKS
-      ========================================= */}
-
-      <section className="how-section">
-
+      {/* HOW IT WORKS */}
+      <section className="how-section" id="how-it-works">
         <div className="how-heading">
+          <p className="how-small-title">HOW IT WORKS</p>
 
-          <p className="how-small-title">
-            HOW IT WORKS
+          <h2>Book Your Driver in 3 Simple Steps</h2>
+
+          <p className="how-subtitle">
+            Getting started is simple. Share your travel details
+            and contact our team to discuss your requirements.
           </p>
 
-          <h2>
-            Get Your Car or Driver in 3 Easy Steps
-          </h2>
-
-          <div className="how-line"></div>
-
+          <div className="how-line" />
         </div>
-
 
         <div className="steps-container">
+          {steps.map((step, index) => (
+            <React.Fragment key={step.number}>
+              <article className="step-item">
+                <div className="step-top">
+                  <span className="step-number">
+                    {step.number}
+                  </span>
 
-          {/* STEP 01 */}
+                  <span className="step-icon">
+                    {renderStepIcon(step.icon)}
+                  </span>
+                </div>
 
-          <div className="step-item">
+                <h3>{step.title}</h3>
 
-            <div className="step-top">
+                <p>{step.description}</p>
 
-              <div className="step-number">
-                01
-              </div>
+                <span className="step-bottom-line" />
+              </article>
 
-              <div className="step-icon">
-                <svg
-                  viewBox="0 0 64 64"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="10"
-                    y="15"
-                    width="44"
-                    height="31"
-                    rx="5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                  />
-
-                  <path
-                    d="M20 54H44"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                  />
-
-                  <path
-                    d="M23 46V54"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                  />
-
-                  <path
-                    d="M41 46V54"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                  />
-                </svg>
-              </div>
-
-            </div>
-
-            <h3>
-              Choose Service
-            </h3>
-
-            <p>
-              Select Car Rental or
-              <br />
-              Driver on Rent.
-            </p>
-
-          </div>
-
-
-          {/* ARROW */}
-
-          <div className="step-arrow">
-            ›
-          </div>
-
-
-          {/* STEP 02 */}
-
-          <div className="step-item">
-
-            <div className="step-top">
-
-              <div className="step-number">
-                02
-              </div>
-
-              <div className="step-icon">
-
-                <svg
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M16 2.5C8.55 2.5 2.5 8.4 2.5 15.65c0 2.6.78 5.02 2.13 7.04L2.4 29.5l7.04-2.18a13.7 13.7 0 0 0 6.56 1.66c7.45 0 13.5-5.9 13.5-13.33C29.5 8.4 23.45 2.5 16 2.5Z"
-                  />
-                </svg>
-
-              </div>
-
-            </div>
-
-            <h3>
-              Send Your Requirement
-            </h3>
-
-            <p>
-              Tell us your date, location
-              <br />
-              and travel details.
-            </p>
-
-          </div>
-
-
-          {/* ARROW */}
-
-          <div className="step-arrow">
-            ›
-          </div>
-
-
-          {/* STEP 03 */}
-
-          <div className="step-item">
-
-            <div className="step-top">
-
-              <div className="step-number">
-                03
-              </div>
-
-              <div className="step-icon">
-
-                <svg
-                  viewBox="0 0 64 64"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="10"
-                    y="13"
-                    width="44"
-                    height="43"
-                    rx="4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                  />
-
-                  <path
-                    d="M20 7V19"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                  />
-
-                  <path
-                    d="M44 7V19"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                  />
-
-                  <path
-                    d="M10 26H54"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                  />
-
-                  <circle
-                    cx="23"
-                    cy="37"
-                    r="3"
-                    fill="currentColor"
-                  />
-
-                  <circle
-                    cx="41"
-                    cy="37"
-                    r="3"
-                    fill="currentColor"
-                  />
-
-                  <circle
-                    cx="23"
-                    cy="47"
-                    r="3"
-                    fill="currentColor"
-                  />
-
-                  <circle
-                    cx="41"
-                    cy="47"
-                    r="3"
-                    fill="currentColor"
-                  />
-
-                </svg>
-
-              </div>
-
-            </div>
-
-            <h3>
-              Get Confirmation
-            </h3>
-
-            <p>
-              We'll contact you on WhatsApp
-              <br />
-              and confirm availability.
-            </p>
-
-          </div>
-
+              {index < steps.length - 1 && (
+                <div className="step-arrow" aria-hidden="true">
+                  →
+                </div>
+              )}
+            </React.Fragment>
+          ))}
         </div>
 
+        <div className="how-bottom-cta">
+          <div>
+            <h3>Ready to plan your journey?</h3>
+            <p>Contact us with your travel requirements.</p>
+          </div>
+
+          <button
+            type="button"
+            className="how-whatsapp-btn"
+            onClick={openWhatsApp}
+          >
+            Contact Us
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
       </section>
     </>
   );
-}
+};
 
 export default DriverSection;

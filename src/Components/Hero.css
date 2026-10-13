@@ -1,4 +1,3 @@
-
 /* ================================
    SONI DRIVER CENTER — HERO SECTION
 ================================ */
@@ -345,7 +344,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;
+    min-height: calc(100vh - 82px);
     background-position: 60% center;
   }
 
@@ -366,7 +365,7 @@
 
   .hero-container {
     width: calc(100% - 48px);
-    min-height: inherit;
+    min-height: calc(100vh - 82px);
     padding: 110px 0 30px;
   }
 
@@ -434,11 +433,13 @@
 
 @media (max-width: 480px) {
   .hero {
+    min-height: calc(100vh - 72px);
     background-position: 62% center;
   }
 
   .hero-container {
     width: calc(100% - 36px);
+    min-height: calc(100vh - 72px);
     padding: 95px 0 24px;
   }
 
